@@ -1,0 +1,44 @@
+.sidebar{
+    flex: 1;
+    height: calc(100vh - 50px);
+    /* 100vh will make it overflow. but 100vh-50px which is topbar
+    height is perfect, take note of this gaps (100vh - 50px)*/
+    background-color:rgb(191, 191, 219);
+    position: sticky;
+    top: 50px;/* it starts after topbar which is 50px*/
+    flex-direction: column;
+}
+.sidebarWrapper{
+    padding: 20px;
+    color: rgb(19, 12, 12);  
+}
+.sidebarMenu{
+ 
+    margin-bottom: 10px;
+}
+.sidebarTitle{
+  font-size: 17px;
+  color: rgb(48, 35, 35);  
+}
+.sidebarList{
+    list-style: none;
+    padding: 5px;
+   
+}
+.sidebarListItem{
+   
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.sidebarListItem.active, .sidebarListItem:hover{
+background-color: rgb(229, 241, 229);
+
+}
+.sidebarIcon{
+    margin-right: 5px !important;
+    font-size: 20px !important;
+
+}
