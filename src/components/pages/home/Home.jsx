@@ -1,6 +1,8 @@
 import Featured from "../../featuredInfo/featuredInfo";
 import Chart from "../../charts/Chart";
 import { Userdata } from "../../../dummyData";
+import WidgetLarge from "../../widgetLarge/WidgetLarge";
+import Widgetsm from "../../widgetSmall/Widget";
 import "./home.css"
 const Home=()=>{
 return(
@@ -8,9 +10,11 @@ return(
     <div className="home">
 <Featured/>
 <Chart data={Userdata} title="User Analytics" grid datakey="Active User"/>
-    </div>
+    
     <div className="homewidgets">
-home widget
+<Widgetsm/>
+<WidgetLarge/>
+</div>
     </div>
     </>
 )
