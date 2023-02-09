@@ -1,0 +1,64 @@
+.user{
+    flex: 4;
+    padding:20px;
+}
+.userTitleContainer{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.userTitle{
+font-size: 22px;
+}
+.userAddButton{
+width: 80px;
+border: none;
+padding: 5px;
+background-color: rgb(113, 63, 160);
+border-radius: 5px;
+color: white;
+cursor: pointer;
+font-size: 18px;
+}
+.userContainer{
+display: flex;
+margin-top: 20px;
+
+}
+.userShow{
+flex: 1;
+padding: 20px;
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+}
+.userShowTop{
+    display: flex;
+    align-items: center;
+
+}
+.userShowJobTitle{
+    
+}
+.userShowUsername{
+
+}
+.userShowUserTitle{
+
+}
+.userShowImg{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.userUpdate{
+    flex: 2;
+    padding: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        padding: 20px;
+        margin-left: 20px;
+}

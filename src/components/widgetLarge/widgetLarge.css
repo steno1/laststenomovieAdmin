@@ -4,5 +4,55 @@
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
       padding: 20px; 
-      margin-right: 20px; 
+      margin-right: 0px; 
+}
+.widgetLgTitle{
+  font-size: 22px;
+  font-weight: 600;
+}
+.widgetLgImg{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.widgetLgTh{
+  text-align: left;
+}
+.widgetLgButton{
+  padding: 5px 7px;
+  border: none;
+  border-radius: 10px;
+  
+}
+.widgetLgButton.Approved{
+  background-color: lightgreen;
+  color: darkgreen;
+}
+.widgetLgButton.Pending{
+  background-color: rgb(233, 233, 42);
+  color: rgb(49, 47, 47);
+}
+.widgetLgButton.Declined{
+  background-color: rgb(234, 141, 141);
+  color: darkred;
+}
+.widgetLgTable{
+  width: 100%;
+  border-spacing: 20px;
+}
+.widgetLgTdUser{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.widgetLgDate{
+font-weight: 300;
+}
+.widgetLgAmount{
+  font-weight: 300;
+}
+.widgetLgStatus{
+
 }
