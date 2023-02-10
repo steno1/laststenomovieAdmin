@@ -10,7 +10,7 @@ import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
   import  ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
   import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
   import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
-
+import {Link} from "react-router-dom"
 import "./sidebar.css"
 const Sidebar=()=>{
     return(
@@ -40,15 +40,20 @@ Analytics
 <div className="sidebarMenu">
 <h3 className="sidebarTitle"> Quick Menu</h3>
 <ul className="sidebarList">
+<Link to="/users" className='link'>
 <li className='sidebarListItem '>
 <PermIdentityOutlinedIcon className="sidebarIcon"/>
 Users
 </li>
+</Link>
 
+<Link to="/products" className='link'>
 <li className='sidebarListItem'>
 <StorefrontOutlinedIcon className="sidebarIcon"/>
  Products
  </li>
+</Link>
+
  <li className='sidebarListItem'>
 <AttachMoneyOutlinedIcon className="sidebarIcon"/>
  Transactions

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import UserList from "./components/pages/userList/UserList";
 import User from "./components/pages/user/User";
+import NewUser from "./components/pages/newUser/newUser";
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
     />
     <Route path="/user/:userid" 
       element={<User/>}
+    />
+    <Route path="/user/newUser" 
+      element={<NewUser/>}
     />
        
     
