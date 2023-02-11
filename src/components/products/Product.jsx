@@ -1,0 +1,64 @@
+import { Link } from "react-router-dom";
+import Chart from "../charts/Chart";
+import { ProductsData } from "../../dummyData";
+import "./product.css"
+const Product=()=>{
+    return(
+        <div className="product">
+        {/* productTitle and Create button container*/}
+<div className="productTitleContainer">
+<h1 className="productTitle">Product</h1>
+<Link to="/newProduct">
+<button className="productAddButton">Create</button>
+</Link>
+</div>
+ {/* product Top and Buttom container*/}
+ 
+    <div className="productTop">
+<div className="productTopLeft">
+<Chart data={ProductsData} datakey="Sales" title="Sales Performance"
+    
+/>
+</div>
+<div className="productTopRight">
+<div className="productInfoTop">
+<img src="data:image/jpeg;base64,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" 
+alt="" className="productInfoImg"/>
+<span className="productName">Samsung EarPiece</span>
+</div>
+
+<div className="productInfoBottom">
+<div className="productInfoItem">
+    <span className="productInfoKey">id:</span>
+    <span className="productInfoValue">123</span>
+</div>
+
+<div className="productInfoItem">
+    <span className="productInfoKey">Sales:</span>
+    <span className="productInfoValue">$150</span>
+</div>
+
+
+<div className="productInfoItem">
+    <span className="productInfoKey">active:</span>
+    <span className="productInfoValue">Yes</span>
+</div>
+
+<div className="productInfoItem">
+    <span className="productInfoKey">In stock:</span>
+    <span className="productInfoValue">No</span>
+</div>
+
+</div>
+</div>
+</div>
+
+    
+    <div className="productButtom">
+
+    </div>
+ </div>
+        
+    )
+}
+export default Product;
