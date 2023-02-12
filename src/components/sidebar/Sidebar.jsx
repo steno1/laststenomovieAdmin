@@ -19,10 +19,12 @@ const Sidebar=()=>{
 <div className="sidebarMenu">
 <h1 className="sidebarTitle"> DashBoard</h1>
 <ul className="sidebarList">
+<Link to="/" className='link'>
 <li className='sidebarListItem active'>
 <LineStyleOutlinedIcon className="sidebarIcon"/>
 Home
 </li>
+</Link>
 <li className='sidebarListItem'>
 <TimelineOutlinedIcon className="sidebarIcon"/>
 Analytics

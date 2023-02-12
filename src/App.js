@@ -14,6 +14,7 @@ import User from "./components/pages/user/User";
 import NewUser from "./components/pages/newUser/newUser";
 import ProductList from "./components/productList/ProductList";
 import Product from "./components/products/Product";
+import NewProduct from "./components/pages/newProduct/newProduct";
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
       element={<Product/>}  />
       
       <Route path="/Products/newProduct" 
-      element={<NewUser/>}  />
+      element={<NewProduct/>}  />
        
        
     

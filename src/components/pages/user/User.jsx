@@ -12,7 +12,7 @@ const User=()=>{
 {/* Edit and Create container*/}
 <div className="userTitleContainer">
 <h1 className="userTitle">Edit User</h1>
-<Link to="/newUser">
+<Link to="/user/newUser">
 <button className="userAddButton">Create</button>
 </Link>
 
