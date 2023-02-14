@@ -36,3 +36,8 @@ color: red;
 cursor: pointer;
 
 }
+@media screen {
+  .productList{
+    overflow-x: scroll;
+}
+}

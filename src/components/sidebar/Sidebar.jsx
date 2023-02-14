@@ -11,10 +11,34 @@ import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
   import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
   import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
 import {Link} from "react-router-dom"
+import { useState } from "react";
+import {UilBars} from "@iconscout/react-unicons";
+import{motion} from "framer-motion"
+
 import "./sidebar.css"
 const Sidebar=()=>{
+    const [expanded, setExpanded]=useState(false);
+    const sidebarVariants={
+        true:{
+            left:"0",
+        },
+        false:{
+            left:"-70%"
+        }
+    } 
     return(
-        <div className="sidebar">
+        <>
+        <div className="all">
+        {/* UilBar not inside sidebar*/}
+        <div className="bars" 
+       style={expanded?{left:"60%"}:{left:"0%"}}
+        onClick={()=>setExpanded(!expanded)}>
+          <UilBars className="bar"/>  
+        </div>
+        <motion.div className="sidebar"
+         variants={sidebarVariants}
+        animate={window.innerWidth<=950?`${expanded}`:""}
+        >
         <div className="sidebarWrapper">
 <div className="sidebarMenu">
 <h1 className="sidebarTitle"> DashBoard</h1>
@@ -88,9 +112,6 @@ Mail
 </ul>
 </div>
 
-
-
-
 <div className="sidebarMenu">
 <h3 className="sidebarTitle"> Staff</h3>
 <ul className="sidebarList">
@@ -108,19 +129,10 @@ Analytics
 </ul>
 </div>
 
-
-
         </div>
+        </motion.div>
         </div>
-
-
-
-
-
-
-
-
-
+        </>
 
     )
 }

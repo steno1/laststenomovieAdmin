@@ -11,8 +11,9 @@ const Chart=({title, data, datakey, grid})=>{
     return(
         <div className="chart">
 <h3 className="chartTitle">{title}</h3>
-<ResponsiveContainer width="100%" aspect={4 / 1}>
-        <LineChart
+<ResponsiveContainer width="100%" aspect={4 / 1}
+>
+        <LineChart className="linechart"
           width={500}
           height={300}
           data={data}
@@ -23,7 +24,8 @@ const Chart=({title, data, datakey, grid})=>{
             bottom: 5,
           }}
         >
-        {grid && <CartesianGrid strokeDasharray="3 3" />}
+        {grid && <CartesianGrid strokeDasharray="3 3"
+        className="cartesian" />}
           
           <XAxis dataKey="name"stroke="blue" />
           <YAxis />

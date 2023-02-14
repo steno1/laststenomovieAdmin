@@ -44,7 +44,7 @@ setData(data.filter(item=>item.id !==id))
       ];
 
     return(
-        <div className="productList">
+        <div className="productList" style={{ height: 700, width: '100%' }}>
 <DataGrid disableSelectionOnClick
         rows={data}
         columns={columns}

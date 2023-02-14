@@ -53,6 +53,15 @@ font-weight: 300;
 .widgetLgAmount{
   font-weight: 300;
 }
-.widgetLgStatus{
+@media screen  and (max-width:768px)
+{
+  .widgetLg{
+  margin-top: 20px;
+   padding: 2px;
+   overflow-x: scroll;
+   overflow-y: scroll;
+    
 
+  }
+  
 }

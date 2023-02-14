@@ -34,3 +34,8 @@ color: red;
 cursor: pointer;
 
 }
+@media screen and (max-width:950px) {
+  .userlist{
+      overflow-x: scroll;
+  }
+      }

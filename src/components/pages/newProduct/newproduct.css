@@ -32,3 +32,8 @@
     cursor: pointer;
     color: white;
 }
+@media screen and (max-width:950px) {
+    .newproduct{
+       margin-left: 50px;
+    }
+}

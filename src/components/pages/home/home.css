@@ -5,3 +5,26 @@
     display: flex;
     margin: 20px;
 }
+
+@media screen  and (max-width:950px)
+{
+  .home{
+  
+   justify-content: center;
+   overflow: hidden;
+    
+  }
+  .widgetsm{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .homewidgets{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
+  }
+  

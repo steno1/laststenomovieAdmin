@@ -10,12 +10,12 @@ return(
 <>
 
     <div className="home">
-<Featured/>
+<Featured className="featured"/>
 <Chart data={Userdata} title="User Analytics" grid datakey="Active User"/>
     
     <div className="homewidgets">
-<Widgetsm/>
-<WidgetLarge/>
+<Widgetsm className="widgetsm"/>
+<WidgetLarge className="widgetLg"/>
 </div>
     </div>
     </>

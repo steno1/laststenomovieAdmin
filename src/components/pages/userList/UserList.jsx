@@ -53,7 +53,7 @@ const UserList=()=>{
     return(
         <div className="userlist">
         
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 700, width: '100%' }}>
       <DataGrid disableSelectionOnClick
         rows={data}
         columns={columns}

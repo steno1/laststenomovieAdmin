@@ -42,3 +42,39 @@ background-color: rgb(229, 241, 229);
     font-size: 20px !important;
 
 }
+
+@media screen and (max-width:950px) {
+    .all{
+margin-top: 0 !important;}
+   
+    .sidebar{
+        position: fixed;
+        z-index: 999;
+        background-color:#E3DFFD;
+        width: 55%;
+        padding-right: 1rem;
+        height: 100%;
+        margin-top: 0 !important;
+        border-radius: 0 10px 0 0;
+        overflow-y: scroll;
+ 
+    
+        }
+
+.bars{
+    
+    display: flex;
+    z-index: 9999;
+    position: fixed;
+    top: 3.1rem;
+    background-color:lightblue;
+    padding: 3px;
+    color: black;
+    border-radius: 20%;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
+
+}

@@ -1,6 +1,7 @@
 .product{
     flex: 4;
     padding: 20px;
+   
 }
 .productTitleContainer{
 display: flex;
@@ -125,3 +126,23 @@ margin-right: 20px;
     font-weight: bold;
     cursor: pointer;
 }
+
+@media screen and (max-width:950px) {
+    .productTop{
+       flex-direction: column;
+    }
+    .productTopLeft{
+        width:400px;
+    }
+    .productTopRight{
+        width:320px;
+    }
+    .productBottom{
+width:325px
+    }
+    .productAddButton{
+        width: 50px;
+        font-size: 14px;
+        margin-right: 45px;
+        }
+    }

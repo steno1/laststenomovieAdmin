@@ -46,3 +46,25 @@
     font-size: 15px;
     color: gray;
 }
+@media screen  and (max-width:950px)
+{
+    .featured{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 100%;
+    }  
+    .featuredItem{
+        flex: 1;
+        margin: 0px 20px;
+        padding: 30px;
+        width: 75%;
+        margin: 20px;
+        align-items: center;
+        justify-content: center;
+        
+        
+       
+    } 
+}

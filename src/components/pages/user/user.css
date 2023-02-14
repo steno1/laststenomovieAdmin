@@ -1,6 +1,7 @@
 .user{
     flex: 4;
     padding:20px;
+    overflow-x: scroll; 
 }
 .userTitleContainer{
 display: flex;
@@ -141,4 +142,27 @@ margin-left: 10px;
     background-color: darkblue;
     color: white;
     font-weight: bolder;
+}
+@media screen and (max-width:950px) {
+   .userContainer{
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: scroll;
+   } 
+   .userTitle{
+    font-size: 18px;
+    }
+    .userUpdateImage{
+        width:40px;
+        height: 50px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 5px;
+    }
+    .userUpdateInput{
+        border: none;
+        width: 150px;
+        height: 20px;
+        border-bottom: 1px solid gray;
+    }
 }
