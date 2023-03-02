@@ -40,7 +40,7 @@ function App() {
     />
     {/* product list*/}
 
-    <Route path="/products" 
+    <Route path="/movies" 
       element={<ProductList/>}
     />
     <Route path="/Products/:Productid" 

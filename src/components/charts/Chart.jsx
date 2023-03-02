@@ -27,7 +27,7 @@ const Chart=({title, data, datakey, grid})=>{
         {grid && <CartesianGrid strokeDasharray="3 3"
         className="cartesian" />}
           
-          <XAxis dataKey="name"stroke="blue" />
+          <XAxis dataKey="steno"stroke="blue" />
           <YAxis />
           <Tooltip />
           <Legend />

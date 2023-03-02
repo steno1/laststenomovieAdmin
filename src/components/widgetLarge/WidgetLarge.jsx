@@ -9,6 +9,7 @@ return(
         <div className="widgetLg">
 <h3 className="widgetLgTitle">Latest Transactions</h3>
 <table className="widgetLgTable">
+<tbody>
 <tr className="widgetLgTr">
 <th className="widgetLgTh">Customer</th>
 <th className="widgetLgTh">Dates</th>
@@ -68,6 +69,7 @@ return(
 <Button type="Approved"/>  
 </td>
 </tr>
+</tbody>
 </table>
         </div>
     )

@@ -10,7 +10,8 @@ import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
   import  ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
   import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
   import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
-import {Link} from "react-router-dom"
+  import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
+  import {Link} from "react-router-dom"
 import { useState } from "react";
 import {UilBars} from "@iconscout/react-unicons";
 import{motion} from "framer-motion"
@@ -73,10 +74,10 @@ Users
 </li>
 </Link>
 
-<Link to="/products" className='link'>
+<Link to="/movies" className='link'>
 <li className='sidebarListItem'>
-<StorefrontOutlinedIcon className="sidebarIcon"/>
- Products
+<PlayCircleOutlinedIcon className="sidebarIcon"/>
+ Movies
  </li>
 </Link>
 
