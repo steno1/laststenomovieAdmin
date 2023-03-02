@@ -1,10 +1,12 @@
 import "./userlist.css"
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import Topbar from "../../topbar/Topbar";
 import { DataGrid } 
 from '@mui/x-data-grid';
 import { userRows } from "../../../dummyData";
 import {Link} from "react-router-dom"
 import { useState } from "react";
+import Sidebar from "../../sidebar/Sidebar";
 
 
 
@@ -51,6 +53,10 @@ const UserList=()=>{
       ];
 
     return(
+        <>
+        <Topbar/>
+        <div className="container">
+        <Sidebar/>
         <div className="userlist">
         
         <div style={{ height: 700, width: '100%' }}>
@@ -63,6 +69,8 @@ const UserList=()=>{
       />
     </div>
         </div>
+        </div>
+        </>
     )
 }
 export default UserList;

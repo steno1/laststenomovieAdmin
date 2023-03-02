@@ -15,18 +15,19 @@ import NewUser from "./components/pages/newUser/newUser";
 import ProductList from "./components/productList/ProductList";
 import Product from "./components/products/Product";
 import NewProduct from "./components/pages/newProduct/newProduct";
-
+import Login from "./components/pages/login/Login";
 
 function App() {
   return (
     <BrowserRouter>
-<Topbar/>
-<div className="container">
-<Sidebar/>
-      <Routes>
-      
+    
+<Routes>
+
     <Route path="/" 
-      element={<Home className="App" />}
+      element={<Home/>}
+    />
+    <Route path="/login" 
+      element={<Login />}
     />
      {/* user list*/}
     <Route path="/users" 
@@ -48,11 +49,12 @@ function App() {
       
       <Route path="/Products/newProduct" 
       element={<NewProduct/>}  />
-       
-       
+     </Routes>
     
-    </Routes>
-    </div>
+      
+      
+    
+    
     </BrowserRouter>
   
   );

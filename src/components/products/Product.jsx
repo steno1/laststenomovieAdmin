@@ -3,9 +3,16 @@ import Chart from "../charts/Chart";
 import { ProductsData } from "../../dummyData";
 import "./product.css"
 import { Publish } from "@material-ui/icons";
+import Topbar from "../topbar/Topbar";
+import Sidebar from "../sidebar/Sidebar";
 const Product=()=>{
     return(
+        <>
+        <Topbar/>
+        <div className="container">
+        <Sidebar/>
         <div className="product">
+        
         {/* productTitle and Create button container*/}
 <div className="productTitleContainer">
 <h1 className="productTitle">Product</h1>
@@ -95,6 +102,8 @@ alt=""
 </form>
     </div>
  </div>
+ </div>
+ </>
         
     )
 }

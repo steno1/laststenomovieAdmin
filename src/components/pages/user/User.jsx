@@ -6,8 +6,14 @@ import LocationSearchingOutlinedIcon from '@mui/icons-material/LocationSearching
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PublishIcon from '@mui/icons-material/Publish';
 import {Link} from "react-router-dom"
+import Topbar from "../../topbar/Topbar";
+import Sidebar from "../../sidebar/Sidebar";
 const User=()=>{
     return(
+        <>
+        <Topbar/>
+        <div className="container">
+        <Sidebar/>
 <div className="user">
 {/* Edit and Create container*/}
 <div className="userTitleContainer">
@@ -122,6 +128,8 @@ className="userUpdateInput"/>
 
 </div>
 </div>
+</div>
+</>
     )
 }
 export default User;

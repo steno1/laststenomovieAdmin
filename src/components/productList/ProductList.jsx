@@ -5,6 +5,8 @@ from '@mui/x-data-grid';
 import { productsRows } from "../../dummyData";
 import {Link} from "react-router-dom"
 import { useState } from "react";
+import Topbar from "../topbar/Topbar";
+import Sidebar from "../sidebar/Sidebar";
 
 const ProductList=()=>{
     const [data, setData]=useState(productsRows)
@@ -44,6 +46,10 @@ setData(data.filter(item=>item.id !==id))
       ];
 
     return(
+        <>
+        <Topbar/>
+        <div className="container">
+        <Sidebar/>
         <div className="productList" style={{ height: 700, width: '100%' }}>
 <DataGrid disableSelectionOnClick
         rows={data}
@@ -53,6 +59,8 @@ setData(data.filter(item=>item.id !==id))
         checkboxSelection
       />
         </div>
+        </div>
+        </>
     )
 }
 export default ProductList;

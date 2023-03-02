@@ -1,6 +1,12 @@
+import Sidebar from "../../sidebar/Sidebar"
+import Topbar from "../../topbar/Topbar"
 import "./newproduct.css"
 const NewProduct=()=>{
     return(
+        <>
+        <Topbar/>
+        <div className="container">
+        <Sidebar/>
         <div className="newproduct">
             <h1 className="addProductTitle">New Product</h1>
             <form className="addProductForm">
@@ -28,6 +34,8 @@ const NewProduct=()=>{
 <button className="addProductButton">create</button>
             </form>
         </div>
+        </div>
+        </>
     )
 }
 export default NewProduct

@@ -1,5 +1,13 @@
 .home{
+    
     flex: 4;
+  
+}
+.container{
+  display: flex;
+}
+.sidebar{
+  flex: 1;
 }
 .homewidgets{
     display: flex;

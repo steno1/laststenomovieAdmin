@@ -1,9 +1,10 @@
+//it will takes the action and updates into Context.js
 const AuthReducer=(state, action)=>{
 switch (action.type) {
     case "LOGIN_START":
         return {
         user:null,
-        isFetching:true,
+        isFetching:true,//check if we fetch data from api
         error:false    
         }
         case "LOGIN_SUCCESS":

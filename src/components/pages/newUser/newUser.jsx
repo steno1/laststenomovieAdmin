@@ -1,7 +1,11 @@
+import Sidebar from "../../sidebar/Sidebar";
 import "./newuser.css"
 
 const NewUser=()=>{
     return(
+        <>
+        <div className="container">
+        <Sidebar/>
         <div className="newuser">
 <h1 className="newUserTitle">New User</h1>
 <form className="newUserForm">
@@ -68,6 +72,8 @@ const NewUser=()=>{
 <button className="newUserButton">Create</button>
 </form>
         </div>
+        </div>
+        </>
     )
 }
 export default NewUser;

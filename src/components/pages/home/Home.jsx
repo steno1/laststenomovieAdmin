@@ -1,3 +1,4 @@
+import Topbar from "../../topbar/Topbar";
 import Featured from "../../featuredInfo/featuredInfo";
 import Chart from "../../charts/Chart";
 import { Userdata } from "../../../dummyData";
@@ -6,6 +7,7 @@ import Widgetsm from "../../widgetSmall/Widget";
 import "./home.css"
 import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
+import Sidebar from "../../sidebar/Sidebar";
 //import Sidebar from "../../sidebar/Sidebar";
 const Home=()=>{
     
@@ -38,13 +40,15 @@ console.log(err)
     }
 };
 getStats();
-    }, [MONTHS])
-    console.log(userStat)
+    }, [MONTHS]);
 
 return(
 <>
-
+<Topbar/>
+<div className="container">
+<Sidebar className="sidebar"/>
     <div className="home">
+    
 <Featured className="featured"/>
 <Chart data={userStat} title="User Analytics" grid datakey="New User"/>
     
@@ -52,6 +56,7 @@ return(
 <Widgetsm className="widgetsm"/>
 <WidgetLarge className="widgetLg"/>
 </div>
+    </div>
     </div>
     </>
 )
