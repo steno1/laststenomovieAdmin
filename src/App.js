@@ -1,3 +1,5 @@
+import {useContext} from "react";
+import { AuthContext } from "./context/authContext/AuthContext";
 import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import './app.css';
@@ -6,29 +8,35 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
   //Navigate,
 
 } from "react-router-dom";
 import UserList from "./components/pages/userList/UserList";
 import User from "./components/pages/user/User";
 import NewUser from "./components/pages/newUser/newUser";
-import ProductList from "./components/productList/ProductList";
-import Product from "./components/products/Product";
+import MovieList from "./components/movieList/movieList";
+import Movie from "./components/movies/movie";
 import NewProduct from "./components/pages/newProduct/newProduct";
 import Login from "./components/pages/login/Login";
 
 function App() {
+  const {user}=useContext(AuthContext);
   return (
     <BrowserRouter>
     
 <Routes>
 
+<Route path="/login" 
+      element={user? <Navigate to ="/"/>:<Login /> }
+
+    />
+    {user && (
+<>
     <Route path="/" 
       element={<Home/>}
     />
-    <Route path="/login" 
-      element={<Login />}
-    />
+   
      {/* user list*/}
     <Route path="/users" 
       element={<UserList/>}
@@ -42,19 +50,20 @@ function App() {
     {/* product list*/}
 
     <Route path="/movies" 
-      element={<ProductList/>}
+      element={<MovieList/>}
     />
-    <Route path="/Products/:Productid" 
-      element={<Product/>}  />
+    <Route path="/movie/:movieid" 
+      element={<Movie/>}  />
       
       <Route path="/Products/newProduct" 
       element={<NewProduct/>}  />
+
+</>
+
+)}
+
      </Routes>
-    
-      
-      
-    
-    
+
     </BrowserRouter>
   
   );

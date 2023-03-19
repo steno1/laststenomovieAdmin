@@ -24,7 +24,7 @@ const getStats=async()=>{
     try{
 const res=await axios.get("/users/stats",{
     headers:{
-    token: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjBjZjNmYTQ3Y2FhMTZkZjdiMmMzZSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3Njg1OTEyNywiZXhwIjoxNjc3NDYzOTI3fQ.ZtTOIidLlxWlbWUm_3reZ3xpj8qNplhjduhP5KAFek0"
+    token: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjlmYzQ4YjM4NjZlYzYzODcwNTAyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3Nzk4MTczMywiZXhwIjoxNjc4NTg2NTMzfQ.2ml08GIuyjGYPHtnar2RBUsgCqHH42vovU-FWw3YdxA"
 }})
 const statList=res.data.sort(function(a, b){
 return a._id - b._id;

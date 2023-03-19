@@ -18,8 +18,8 @@ switch (action.type) {
                 user:null,
                 isFetching:false,
                 error:true    
-                }
-    default:
+                };
+    default: return {...state};
 
 }
 }

@@ -11,3 +11,10 @@ export const LoginFailure=()=>({
         type:"LOGIN_FAILURE"
         });
 //Actions are dispatched
+
+// logout
+export const LogoutStart=()=>({
+    type:"LOGOUT"
+    });
+    
+   

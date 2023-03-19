@@ -9,7 +9,7 @@ const getNewUser=async()=>{
 try{
     const res=await axios.get("/users?new=true?",{
         headers:{
-        token: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjlmYzQ4YjM4NjZlYzYzODcwNTAyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NzU2NDU0NCwiZXhwIjoxNjc4MTY5MzQ0fQ.QVbt6N0_YlNuxmfXs0FAueSqHU3EyehXNutCCxo0OFo"
+        token: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTE4NjEzYzAzMGM1MjhmYjc3ZTA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3ODg3MTE4MywiZXhwIjoxNjc5NDc1OTgzfQ.4vi4qa95328GtDpNmlCgTFgojQ6PqTiy-2z1Ww2GqFc"
         }
     });
     setNewUser(res.data);
