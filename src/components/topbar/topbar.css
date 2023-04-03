@@ -30,7 +30,27 @@
     position: relative;
 margin-right: 10px;
 cursor: pointer;
+
 }
+.dropdown{
+    position: relative;
+    display: inline-block;
+    
+    color: blue;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    z-index: 999;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+    cursor: pointer;
+    
+}
+
 .topIconBag{
     background-color: red;
     position: absolute;

@@ -27,15 +27,17 @@ function App() {
     
 <Routes>
 
-<Route path="/login" 
-      element={user? <Navigate to ="/"/>:<Login /> }
+<Route path="/" 
+      element={user? <Home/>:<Navigate to="/login" /> }
+
+    />
+    <Route path="/login" 
+      element={!user? <Login/>:<Navigate to="/" /> }
 
     />
     {user && (
 <>
-    <Route path="/" 
-      element={<Home/>}
-    />
+  
    
      {/* user list*/}
     <Route path="/users" 

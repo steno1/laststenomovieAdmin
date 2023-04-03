@@ -9,6 +9,7 @@ export default function Login(){
     const handleClick=(e)=>{
 e.preventDefault();
 //Api calls. user is defined here(email and password)
+//dispatch got from AuthContext, via useContext
 login({email, password}, dispatch)
     }
 return (
@@ -17,12 +18,14 @@ return (
 <input type="text"
  placeholder="email"
   className="loginInput"
+  //when we write on input, update email
     onChange={(e)=>setEmail(e.target.value)}
   />
   
 <input type="password"
  placeholder="password"
   className="loginInput"
+  //when we write on input, update password
     onChange={(e)=>setPassword(e.target.value)}
   />
 <button className="loginButton"

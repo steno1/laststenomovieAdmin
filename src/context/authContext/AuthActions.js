@@ -1,10 +1,10 @@
 export const LoginStart=()=>({
-type:"LOGIN_START"
+type:"LOGIN_START"//Actions
 });
 
 export const LoginSuccess=(user)=>({
     type:"LOGIN_SUCCESS",
-    payload:user
+    payload:user// user is returned to update state. user=email & password
     });
     
 export const LoginFailure=()=>({
@@ -13,7 +13,7 @@ export const LoginFailure=()=>({
 //Actions are dispatched
 
 // logout
-export const LogoutStart=()=>({
+export const Logout=()=>({
     type:"LOGOUT"
     });
     
