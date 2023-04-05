@@ -8,7 +8,7 @@ import { createMovies } from "../../../context/movieContext/apiCalls";
 import { MovieContext } from "../../../context/movieContext/movieContext";
 const NewProduct=()=>{
     const [movie, setMovie]=useState(null)
-    const [img, setImg]=useState(null)
+    const [imgCoverPage, setImg]=useState(null)
     const [imgTitle, setimgTitle]=useState(null)
     const [imgSmall, setimgSm]=useState(null)
     const [trailer, setTrailer]=useState(null)
@@ -29,7 +29,7 @@ items.forEach((item)=>{
     //`/items/${item.file.name}`=folder and file name
 const storageRef = ref(storage, `/items/${fileName}`);
     //uploading file to storage
-    const uploadTask = uploadBytesResumable(storageRef, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, item.file);
     // seeing percentage of uploads
     uploadTask.on("state_changed", snapshot=>{
         const progress= (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -54,7 +54,7 @@ const handleUpload=(e)=>{
     e.preventDefault();
     upload([
         //the values should=movie model in api
-        {file:img, label:'img'},
+        {file:imgCoverPage, label:'imgCoverPage'},
         {file:imgTitle, label:'imgTitle'},
         {file:imgSmall, label:'imgSmall'},
         {file:trailer, label:'trailer'},
