@@ -1,9 +1,10 @@
 import { useState } from "react"
 import Sidebar from "../../sidebar/Sidebar"
 import Topbar from "../../topbar/Topbar"
-
-
+import storage from "../../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import "./newproduct.css"
+
 const NewProduct=()=>{
     const [movie, setMovie]=useState(null)
     const [img, setImg]=useState(null)
@@ -13,12 +14,52 @@ const NewProduct=()=>{
     const [video, setVideo]=useState(null)
     const [uploaded, setUploaded]=useState(0);
 
-    const handleChange=(e)=>{
-       
-};
+    const handleChange = (e) => {
+        //use one useState to set all states
 
- 
+const value=e.target.value;
+       setMovie({...movie, [e.target.name]:value});
+};
+const upload=(items)=>{
+items.forEach((item)=>{
+    //`/items/${item.file.name}`=folder and file name
+const storageRef = ref(storage, `/items/${item.file.name}`);
+    //uploading file to storage
+    const uploadTask = uploadBytesResumable(storageRef, item.file);
+    // seeing percentage of uploads
+    uploadTask.on("state_changed", snapshot=>{
+        const progress= (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+    }, (err)=>{console.log(err)}, 
+    () => {
+        
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+//set url to movie object with label
+          setMovie((prev)=>{
+            return {...prev, [item.label]:url}
+          });
+          //increase uploaded
+          setUploaded((prev)=>prev+1);
+        });
+      })
+})
+}
+
+//uploading to firebase
+const handleUpload=(e)=>{
+    e.preventDefault();
+    upload([
+        //the values should=movie model in api
+        {file:img, label:'img'},
+        {file:imgTitle, label:'imgTitle'},
+        {file:imgSmall, label:'imgSmall'},
+        {file:trailer, label:'trailer'},
+        {file:video, label:'video'},
+
+    ])
+}
 console.log(movie)
+
     return(
         <>
         <Topbar/>
@@ -125,7 +166,8 @@ onChange={(e)=>setimgSm(e.target.files[0])}
 {uploaded ===5 ?(
     <button className="addProductButton">Create</button>
 ):(
-    <button className="addProductButton" >Upload</button>
+    <button className="addProductButton" onClick={handleUpload} >
+    Upload</button>
 )}
 
             </form>
