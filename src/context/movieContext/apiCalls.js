@@ -4,7 +4,10 @@ import {getMoviesStart,
       getMoviesSuccess,
       deleteMoviesStart,
       deleteMoviesSuccess,
-      deleteMoviesFailure
+      deleteMoviesFailure,
+      createMoviesStart,
+      createMoviesSuccess,
+      createMoviesFailure
 
 
      } from "./movieActions";
@@ -22,7 +25,30 @@ dispatch(getMoviesSuccess(res.data))
 dispatch(getMoviesFailure())
 }
 }
-//delete
+
+//create movies
+//movie is from movie usestate in newProduct
+//movie is the body
+export const createMovies= async (movie, dispatch)=>{
+    dispatch(createMoviesStart()); 
+  try{
+ const res= await axios.post("/movies/", movie, {
+      headers: {
+          token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      }
+  });
+  dispatch(createMoviesSuccess(res.data))
+  
+  }catch(err){
+  dispatch(createMoviesFailure())
+  }
+  }
+
+
+
+
+
+//delete movies
 export const deleteMovies= async (id, dispatch)=>{
     dispatch(deleteMoviesStart()); 
   try{

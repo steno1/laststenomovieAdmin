@@ -21,6 +21,29 @@ const MovieReducer=(state, action)=>{
                     };
 
 
+    case "CREATE_MOVIE_START":
+      return {
+     ...state,
+      isFetching:true,//check if we fetch data from api
+      error:false    
+        }
+      case "CREATE_MOVIE_SUCCESS":
+       return {
+        //adding new movies.
+ //...state.movies, action.payload means all movies stay, plus one more       
+      movies:[...state.movies, action.payload],
+      isFetching:false,
+     error:false    
+      }
+      case "CREATE_MOVIE_FAILURE":
+      return {
+       ...state,
+     isFetching:false,
+     error:true    
+          };
+
+
+
 
      case "DELETE_MOVIES_START":
       return {

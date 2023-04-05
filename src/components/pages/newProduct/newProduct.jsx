@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Sidebar from "../../sidebar/Sidebar"
 import Topbar from "../../topbar/Topbar"
 import storage from "../../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import "./newproduct.css"
-
+import { createMovies } from "../../../context/movieContext/apiCalls";
+import { MovieContext } from "../../../context/movieContext/movieContext";
 const NewProduct=()=>{
     const [movie, setMovie]=useState(null)
     const [img, setImg]=useState(null)
@@ -14,6 +15,7 @@ const NewProduct=()=>{
     const [video, setVideo]=useState(null)
     const [uploaded, setUploaded]=useState(0);
 
+    const {dispatch}=useContext(MovieContext)
     const handleChange = (e) => {
         //use one useState to set all states
 
@@ -22,10 +24,12 @@ const value=e.target.value;
 };
 const upload=(items)=>{
 items.forEach((item)=>{
+    //for firebase to accept same download
+    const fileName=new Date().getTime() + item.label + item.file.name
     //`/items/${item.file.name}`=folder and file name
-const storageRef = ref(storage, `/items/${item.file.name}`);
+const storageRef = ref(storage, `/items/${fileName}`);
     //uploading file to storage
-    const uploadTask = uploadBytesResumable(storageRef, item.file);
+    const uploadTask = uploadBytesResumable(storageRef, fileName);
     // seeing percentage of uploads
     uploadTask.on("state_changed", snapshot=>{
         const progress= (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -57,6 +61,11 @@ const handleUpload=(e)=>{
         {file:video, label:'video'},
 
     ])
+}
+//send movies to database after upload
+const handleSubmit=(e)=>{
+e.preventDefault();
+createMovies(movie, dispatch)
 }
 console.log(movie)
 
@@ -164,7 +173,9 @@ onChange={(e)=>setimgSm(e.target.files[0])}
 <input type="file" onChange={(e)=>setVideo(e.target.files[0])} />
 </div>
 {uploaded ===5 ?(
-    <button className="addProductButton">Create</button>
+    <button className="addProductButton" onClick={handleSubmit}>
+    Create
+    </button>
 ):(
     <button className="addProductButton" onClick={handleUpload} >
     Upload</button>
