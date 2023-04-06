@@ -165,7 +165,8 @@ onChange={(e)=>setimgSm(e.target.files[0])}
 
 <div className="addProductItem">
 <label>Trailer</label>
-<input type="file" onChange={(e)=>setTrailer(e.target.files[0])} />
+<input type="file"
+ onChange={(e)=>setTrailer(e.target.files[0])} />
 </div>
 
 <div className="addProductItem">

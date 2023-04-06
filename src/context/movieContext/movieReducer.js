@@ -43,6 +43,29 @@ const MovieReducer = (state, action) => {
                   error: true
               };
 
+
+//update movie
+case "UPDATE_MOVIE_START":
+  return {
+    ...state,
+    isFetching: true, //check if we fetch data from api
+      error: false
+  }
+  case "UPDATE_MOVIE_SUCCESS":
+    return {
+ movies: [...state.movies.map(
+  movie=>movie._id === action.payload._id && action.payload)],
+        isFetching: false,
+        error: false
+    }
+    case "UPDATE_MOVIE_FAILURE":
+      return {
+        ...state,
+        isFetching: false,
+          error: true
+      };
+
+
               //delete movie
             case "DELETE_MOVIES_START":
               return {

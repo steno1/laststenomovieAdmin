@@ -1,11 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
+import React, { useContext } from 'react'
 import "./movie.css";
 import { Publish } from "@material-ui/icons";
 import Topbar from "../topbar/Topbar";
 import Sidebar from "../sidebar/Sidebar";
+import { updateMovies } from "../../context/movieContext/apiCalls";
+import { MovieContext } from "../../context/movieContext/movieContext";
 const Movie=()=>{
+    const {dispatch, movie}=useContext(MovieContext)
     const location=useLocation();
-    const movie=location.state.movie;
+    const movies=location.state.movie;
+
+    const handleUpdate=(e)=>{
+e.preventDefault();
+// api calls
+updateMovies(movie, dispatch)
+    }
     return(
         <>
         <Topbar/>
@@ -27,31 +37,31 @@ const Movie=()=>{
      
 <div className="productTopRight">
 <div className="productInfoTop">
-<img src={movie.imgCoverPage} 
+<img src={movies.imgCoverPage} 
 alt="" className="productInfoImg"/>
-<span className="productName">{movie.title}</span>
+<span className="productName">{movies.title}</span>
 </div>
 
 <div className="productInfoBottom">
 <div className="productInfoItem">
     <span className="productInfoKey">id:</span>
-    <span className="productInfoValue">{movie._id}</span>
+    <span className="productInfoValue">{movies._id}</span>
 </div>
 
 <div className="productInfoItem">
     <span className="productInfoKey">genre:</span>
-    <span className="productInfoValue">{movie.genre}</span>
+    <span className="productInfoValue">{movies.genre}</span>
 </div>
 
 
 <div className="productInfoItem">
     <span className="productInfoKey">year:</span>
-    <span className="productInfoValue">{movie.year}</span>
+    <span className="productInfoValue">{movies.year}</span>
 </div>
 
 <div className="productInfoItem">
     <span className="productInfoKey">limit:</span>
-    <span className="productInfoValue">{movie.limit}</span>
+    <span className="productInfoValue">{movies.limit}</span>
 </div>
 
 </div>
@@ -61,34 +71,44 @@ alt="" className="productInfoImg"/>
 <form className="productForm">
 {/*Bottom Left */}
 <div className="productFormLeft">
-<label>Movie Title</label>
-    <input type="text" 
-    placeholder={movie.title}/>
 
+<label>Movie Title</label>
+    <input type="text" name="title"
+    placeholder={movies.title} 
+    />
+    
     <label>Year</label>
-    <input type="text" 
-    placeholder={movie.year}/>
+    <input type="text" name="year"
+    placeholder={movies.year}
+    />
 
 <label>Genre</label>
-    <input type="text" 
-    placeholder={movie.genre}/>
+    <input type="text" name="genre"
+    placeholder={movies.genre}
+    />
 
 <label>Limit</label>
-    <input type="text" 
-    placeholder={movie.limit}/>
+    <input type="text" name="limit"
+    placeholder={movies.limit}
+    />
 
 <label>Trailer</label>
     <input type="file" 
-    placeholder={movie.trailer}/>
+    placeholder={movies.trailer}
+   // onChange={(e)=>setTrailer(e.target.files[0])}
+    />       
+    
 
 <label>Video</label>
     <input type="file" 
-    placeholder={movie.video}/>
+    placeholder={movies.video}
+   // onChange={(e)=>setVideo(e.target.files[0])}       
+    />
 
 </div>
 <div className="productFormRight">
 <div className="productUpload">
-<img src={movie.imgCoverPage} 
+<img src={movies.imgCoverPage} 
 alt="coverpageImg"
     className="productUploadImg"
 />
@@ -97,9 +117,12 @@ alt="coverpageImg"
 </label>
 <input type="file" id="file" 
    style={{display:"none"}} 
+  // onChange={(e)=>setImg(e.target.files[0])}
 />
 </div>
-<button className="productButton">
+<button className="productButton"
+onclick={handleUpdate}
+>
     Update
 </button>
 

@@ -47,6 +47,24 @@ export const createMovies = async (movie, dispatch) => {
 }
 
 
+//update
+export const updateMovies = async (movie, dispatch) => {
+    dispatch(createMoviesStart());
+    try {
+        const res = await axios.put(`/movies/${movie._id}`, {
+       //movie here is the body   
+            headers: {
+                token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            }
+        });
+        dispatch(createMoviesSuccess(res.data))
+
+    } catch (err) {
+        dispatch(createMoviesFailure())
+    }
+}
+
+
 
 
 
