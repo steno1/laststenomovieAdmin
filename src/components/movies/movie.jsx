@@ -9,7 +9,7 @@ import { MovieContext } from "../../context/movieContext/movieContext";
 const Movie=()=>{
     const {dispatch, movie}=useContext(MovieContext)
     const location=useLocation();
-    const movies=location.state.movie;
+    const movies=location.state?.movie;
 
     const handleUpdate=(e)=>{
 e.preventDefault();
@@ -37,31 +37,28 @@ updateMovies(movie, dispatch)
      
 <div className="productTopRight">
 <div className="productInfoTop">
-<img src={movies.imgCoverPage} 
+<img src={movies?.imgCoverPage} 
 alt="" className="productInfoImg"/>
-<span className="productName">{movies.title}</span>
+<span className="productName">{movies?.title}</span>
 </div>
 
 <div className="productInfoBottom">
-<div className="productInfoItem">
-    <span className="productInfoKey">id:</span>
-    <span className="productInfoValue">{movies._id}</span>
-</div>
+
 
 <div className="productInfoItem">
     <span className="productInfoKey">genre:</span>
-    <span className="productInfoValue">{movies.genre}</span>
+    <span className="productInfoValue">{movies?.genre}</span>
 </div>
 
 
 <div className="productInfoItem">
     <span className="productInfoKey">year:</span>
-    <span className="productInfoValue">{movies.year}</span>
+    <span className="productInfoValue">{movies?.year}</span>
 </div>
 
 <div className="productInfoItem">
     <span className="productInfoKey">limit:</span>
-    <span className="productInfoValue">{movies.limit}</span>
+    <span className="productInfoValue">{movies?.limit}</span>
 </div>
 
 </div>
@@ -74,41 +71,41 @@ alt="" className="productInfoImg"/>
 
 <label>Movie Title</label>
     <input type="text" name="title"
-    placeholder={movies.title} 
+    defaultValue={movies?.title} 
     />
     
     <label>Year</label>
     <input type="text" name="year"
-    placeholder={movies.year}
+    defaultValue={movies?.year}
     />
 
 <label>Genre</label>
     <input type="text" name="genre"
-    placeholder={movies.genre}
+    defaultValue={movies?.genre}
     />
 
 <label>Limit</label>
     <input type="text" name="limit"
-    placeholder={movies.limit}
+    defaultValue={movies?.limit}
     />
 
 <label>Trailer</label>
     <input type="file" 
-    placeholder={movies.trailer}
+    defaultValue={movies?.trailer}
    // onChange={(e)=>setTrailer(e.target.files[0])}
     />       
     
 
 <label>Video</label>
     <input type="file" 
-    placeholder={movies.video}
+    defaultValue={movies?.video}
    // onChange={(e)=>setVideo(e.target.files[0])}       
     />
 
 </div>
 <div className="productFormRight">
 <div className="productUpload">
-<img src={movies.imgCoverPage} 
+<img src={movies?.imgCoverPage} 
 alt="coverpageImg"
     className="productUploadImg"
 />
@@ -121,7 +118,7 @@ alt="coverpageImg"
 />
 </div>
 <button className="productButton"
-onclick={handleUpdate}
+onClick={handleUpdate}
 >
     Update
 </button>

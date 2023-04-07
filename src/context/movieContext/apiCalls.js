@@ -8,7 +8,10 @@ import {
     deleteMoviesFailure,
     createMoviesStart,
     createMoviesSuccess,
-    createMoviesFailure
+    createMoviesFailure,
+    updateMoviesStart,
+    updateMoviesSuccess,
+    updateMoviesFailure
 
 
 } from "./movieActions";
@@ -49,18 +52,18 @@ export const createMovies = async (movie, dispatch) => {
 
 //update
 export const updateMovies = async (movie, dispatch) => {
-    dispatch(createMoviesStart());
+    dispatch(updateMoviesStart());
     try {
-        const res = await axios.put(`/movies/${movie._id}`, {
+        const res = await axios.put(`/movies/${movie._id}`,movie, {
        //movie here is the body   
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             }
         });
-        dispatch(createMoviesSuccess(res.data))
+        dispatch(updateMoviesSuccess(res.data))
 
     } catch (err) {
-        dispatch(createMoviesFailure())
+        dispatch(updateMoviesFailure())
     }
 }
 
