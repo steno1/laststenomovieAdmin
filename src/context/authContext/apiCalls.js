@@ -1,3 +1,4 @@
+//apiCalls
 import axios from "axios";
 import { LoginFailure, 
     LoginStart, 
@@ -9,6 +10,6 @@ try{
 const res= await axios.post("auth/login", user);
 res.data.isAdmin && dispatch(LoginSuccess(res.data))
 }catch(err){
-dispatch(LoginFailure())
+dispatch(LoginFailure());
 }
 }

@@ -19,7 +19,7 @@ import MovieList from "./components/movieList/movieList";
 import Movie from "./components/movies/movie";
 import NewProduct from "./components/pages/newProduct/newProduct";
 import Login from "./components/pages/login/Login";
-
+import ListList from "./components/list/list/ListList";
 function App() {
   const {user}=useContext(AuthContext);
   return (
@@ -28,11 +28,10 @@ function App() {
 <Routes>
 
 <Route path="/" 
-      element={user? <Home/>:<Navigate to="/login" /> }
-
-    />
+      element={!user? <Home/>:<Navigate to="/login" /> }
+/>
     <Route path="/login" 
-      element={!user? <Login/>:<Navigate to="/" /> }
+      element={user? <Login/>:<Navigate to="/" /> }
 
     />
     {user && (
@@ -59,6 +58,17 @@ function App() {
       
       <Route path="/Products/newProduct" 
       element={<NewProduct/>}  />
+
+       
+
+<Route path="/list/:listid" 
+      element={<Movie/>}  />
+      
+      <Route path="/Products/newProduct" 
+      element={<NewProduct/>} />
+
+      <Route path="/lists" 
+      element={<ListList/>}  />
 
 </>
 

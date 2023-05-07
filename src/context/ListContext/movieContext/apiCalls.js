@@ -1,38 +1,29 @@
 import axios from "axios";
 import {
-    getMoviesStart,
-    getMoviesFailure,
-    getMoviesSuccess,
-    deleteMoviesStart,
-    deleteMoviesSuccess,
-    deleteMoviesFailure,
-    createMoviesStart,
-    createMoviesSuccess,
-    createMoviesFailure,
-    updateMoviesStart,
-    updateMoviesSuccess,
-    updateMoviesFailure
-
-
-} from "./movieActions";
-export const getMovies = async (dispatch) => {
-    dispatch(getMoviesStart());
+    getListStart,
+    getListFailure,
+    getListSuccess,
+    
+} from "./listActions";
+export const getList = async (dispatch) => {
+    dispatch(getListStart());
     try {
-        const res = await axios.get("/movies", {
+        const res = await axios.get("/lists", {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             }
         });
-        dispatch(getMoviesSuccess(res.data))
+        dispatch(getListSuccess(res.data))
 
     } catch (err) {
-        dispatch(getMoviesFailure())
+        dispatch(getListFailure())
     }
 }
 
 //create movies
 //movie is from movie usestate in newProduct
 //movie is the body
+/*
 export const createMovies = async (movie, dispatch) => {
     dispatch(createMoviesStart());
     try {
@@ -67,15 +58,11 @@ export const updateMovies = async (movie, dispatch) => {
     }
 }
 
-
-
-
-
 //delete movies
 export const deleteMovies = async (id, dispatch) => {
     dispatch(deleteMoviesStart());
     try {
-        await axios.delete("/movies/" + id, {
+        await axios.delete("/lists/" + id, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             }
@@ -85,4 +72,4 @@ export const deleteMovies = async (id, dispatch) => {
     } catch (err) {
         dispatch(deleteMoviesFailure())
     }
-}
+} */

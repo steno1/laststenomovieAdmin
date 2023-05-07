@@ -9,7 +9,7 @@ const getNewUser=async()=>{
 try{
     const res=await axios.get("/users?new=true?",{
         headers:{
-        token: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjBmZDk3NWUxOTJmNWY4NzZhOTJhNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDE5MzA4MSwiZXhwIjoxNjgwNzk3ODgxfQ.mgqDBif1cC8IG8Gmvj5DVjOMkGr7A3RoME47L5y-x4o"
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         }
     });
     setNewUser(res.data);

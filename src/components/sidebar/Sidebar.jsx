@@ -2,8 +2,7 @@ import LineStyleOutlinedIcon from '@mui/icons-material/LineStyleOutlined';
  import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
  import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
  import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
- import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+import ListIcon from '@mui/icons-material/List'; 
   import  BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined'; 
   import  MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
   import  DynamicFeedOutlinedIcon  from '@mui/icons-material/DynamicFeedOutlined';
@@ -80,11 +79,13 @@ Users
  Movies
  </li>
 </Link>
-
- <li className='sidebarListItem'>
-<AttachMoneyOutlinedIcon className="sidebarIcon"/>
- Transactions
+<Link to="/lists" className="link">
+<li className='sidebarListItem'>
+<ListIcon className="sidebarIcon"/>
+ List
  </li>
+</Link>
+
  <li className='sidebarListItem'>
 <BarChartOutlinedIcon className="sidebarIcon"/>
  Report
